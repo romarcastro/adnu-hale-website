@@ -1,0 +1,415 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Inter, sans-serif;
+}
+a{
+    text-decoration: none;
+    color: #f1f1f1;
+}
+
+
+/*nav-styles*/
+
+.navigation-container{
+    background-color: #003459;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.time-style{
+    font-size: 20px;
+    padding: 1rem;
+}
+
+#pst-container{
+    color: #f1f1f1;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem 0 0; 
+}
+
+.logo-container{
+    transform: scale(0.7);
+}
+
+/*menu-styles*/
+
+.menu-container{
+    background-color: #002E4F;
+    position: fixed;
+    min-width: 220px;
+    min-height: 100vh;
+    color: #f1f1f1;
+}
+.nav-aside{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+}
+
+.user-circle{
+    margin: 1.5rem 0 0.5rem;
+}
+
+.user-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 3px;
+}
+
+.nav-aside-hr-line{
+    border-width: none;
+    border-color: #f1f1f1;
+    width:170px;
+}
+
+.nav-aside-headers{
+    font-weight: 400;
+    color: #B3B3B3;
+    font-size: 12px;
+    padding-left: 0.5rem;
+}
+
+.menu-section{
+    margin:  2rem;
+}
+
+.menu-items{
+    padding: 0.7rem;
+    transition: all 0.5s;
+    border-radius: 10px;
+
+}
+.m-header{
+    color: #404040;
+    font-size: 14px;
+}
+.s-header{
+    color: #1F4276;
+    font-size: 32px;
+}
+
+.menu-items:hover{
+    background-color: #012239;
+    transition: all 0.5s;
+}
+
+.menu-icons{
+    padding-right: 0.5rem;
+}
+
+.general-section{
+    margin:  2rem;
+    min-width: 197.312px;
+}
+
+/*Book Appointment*/
+.book-appointment{
+    width: 1000px;
+    height: 175px;
+    position: fixed;
+    margin-top: 30px;
+    left: 400px;
+}
+
+.appointment {
+    color: #1F4276;
+}
+
+/*Select Service*/
+.select-service {
+    background-color: #F1F1F1;
+    border-radius: 15px;
+    padding: 20px;
+    width: 450px;
+    height: 120px;
+    position: fixed;
+    margin-top: 190px;
+    left: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align items at the start */
+    align-items: flex-start; /* Align items at the start */
+}
+
+.service-label {
+    color: #003459;
+    font-weight: bold;
+    margin-bottom: 10px; /* Add spacing between label and buttons */
+}
+
+.button-container {
+    display: flex;
+}
+
+
+
+
+.medical-certificate {
+    margin-left: 10px;
+}
+
+.select-service button {
+    background-color: transparent;
+    border: none;
+    color: #003459;
+    background-color: white;
+    border-radius: 8px;
+
+    
+    padding: 20px 50px; 
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border: 1px solid #9EBAC7;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.select-service button:hover {
+    background-color: #003459;
+    color: #fff;
+}
+
+.select-service button.selected {
+    background-color: #003459;
+    color: #fff;
+}
+
+/*Select Date*/
+.calendar {
+    background-color: #F1F1F1;
+    border-radius: 15px;
+    padding: 20px;
+    width: 450px;
+    height: 220px; 
+    position: fixed;
+    margin-top: 370px; 
+    left: 95px;
+    
+    align-items: center;
+    flex-wrap: wrap; 
+}
+
+.calendar-container {
+    display: flex;
+    flex-direction: column;  
+}
+
+.days {
+    display: flex;
+    
+}
+
+.days div {
+    flex: 1; 
+    margin-top: 10px;
+    padding: 0 10px;
+    font-weight: 600;
+}
+
+.dates {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.date {
+    width: calc(100% / 7); 
+    text-align: center;
+    padding: 7px 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.date:hover {
+    background-color: #003459;
+    color: #fff;
+}
+
+.date.selected {
+    background-color: #003459;
+    color: #fff;
+}
+
+/*Time Slots*/
+.time-slots {
+    background-color: #F1F1F1;
+    padding: 20px;
+    height: auto;
+    width: 450px; 
+    border-radius: 15px;
+    position: fixed;
+    margin-top: 190px; 
+    left: 910px; 
+}
+
+.slots-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+}
+
+.slot-text {
+    margin: 0.5rem 10px;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.time-col-one button{
+    background-color: transparent;
+    border: none;
+    color: #003459;
+    background-color: white;
+    border-radius: 5px;
+
+    width: 100px;
+    height: 40px;
+    
+    margin-left: 5px; 
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border: 1px solid #9EBAC7;
+    
+    font-size: 14px;
+    font-weight: 500;
+   
+}
+
+.time-col-two button{
+    background-color: transparent;
+    border: none;
+    color: #003459;
+    background-color: white;
+    border-radius: 5px;
+
+    width: 100px;
+    height: 40px;
+    
+    margin: 1rem 0;
+    margin-left: 5px;
+
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border: 1px solid #9EBAC7;
+    
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+.time-slots button:last-child {
+    margin-right: 0;
+}
+
+.time-slots button:hover {
+    background-color: #003459;
+    color: #fff;
+}
+
+.time-slots button.selected {
+    background-color: #003459;
+    color: #fff;
+}
+
+/* About Appointment */
+.about-appointment {
+    background-color: #F1F1F1;
+    border-radius: 15px;
+    padding: 20px;
+    width: 450px; 
+    position: fixed;
+    margin-top: 435px;
+    left: 910px;
+}
+
+.about-container p {
+    margin-bottom: 10px;
+}
+
+/* Action Buttons */
+.confirmation-action-buttons{
+    left: 400px;
+    position: fixed;
+    margin-top: 570px;
+    display: flex;   
+    border-color: transparent;
+}
+
+.action-buttons {
+    left: 1200px;
+    position: fixed;
+    margin-top: 630px;
+    display: flex;   
+    border-color: transparent;
+}
+
+.cancel-container,
+.submit-container {
+    display: inline-block;
+}
+
+.cancel-button,
+.next-button {
+    color: #ffffff; 
+    padding: 10px 20px; 
+    border: none; 
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.cancel-button {
+    background-color: #FF4564; 
+    border-radius: 4px;
+    color: #F1F1F1;
+    font-weight: 500;
+    font-size: 16px; 
+}
+
+.next-button {
+    background-color: #44A058;
+    border-radius: 4px;
+    margin-left: 10px;
+    color: #F1F1F1;
+    font-weight: 500;
+    font-size: 16px; 
+}
+
+.cancel-button:hover{
+    background-color: #B71D37; 
+    color: #ffffff;
+}
+
+.next-button:hover {
+    background-color: #266B35; 
+    color: #ffffff;
+}
+
+.service{
+    display: flex;
+    align-items: center; 
+}
+
+.service strong{
+    color: #002E4F;
+}
+
+.process-states{
+    width: 20px;
+    padding: 0.5rem;
+}
+
+.about-text-paragraph{
+    padding: 0 2rem;
+    font-size: 14px;
+    color: #6f6f6f;
+}

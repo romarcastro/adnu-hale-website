@@ -1,0 +1,199 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hale |  Confirmation</title>
+    <link rel="stylesheet" href="{% static 'landing-page-styles.css'%}">
+    <link rel="stylesheet" href="{% static '/user-css/confirm-appointments.css'%}">
+    <link rel="stylesheet" href="{% static '/user-css/book-appointments.css'%}">
+    
+    <link rel="icon" href="{% static 'assets/hale-logo.svg'%}">
+
+</head>
+<body>
+    <div class="navigation-container">
+        <div class="logo-container">
+            <img src="{% static 'assets/adnu-and-hale-logo-white.svg'%}" alt="">
+        </div>
+        <div id="pst-container">
+            <div id="pst-time" class="time-style"></div>
+            <a href="">
+                <img src="{% static 'assets/notification-icon.svg'%}" class="logo-container" alt="">
+            </a>
+            <a href="">
+                <img src="{% static 'assets/account-icon.svg'%}" alt="" class="logo-container">
+            </a>
+        </div>
+    </div>
+
+    <div class="menu-container">
+        <div class="nav-aside">
+            <img src="{% static 'assets/user-circle.svg'%}" class="user-circle">
+
+            <!-- use database here for name and ID -->
+
+            <div class="user-info">
+                <span style="font-weight: 700;">JUAN DE LA CRUZ</span>
+                <span style="font-weight: 200;">Student</span>
+                <span>ID: 202200123</span> 
+            </div>
+            
+            
+            <hr class="nav-aside-hr-line">
+
+            <div class="menu-section">
+                <span class="nav-aside-headers">MENU</span> 
+                <a href="{% url 'user-index'%}">
+                    <div class="menu-items" id="home-link">
+                        <img src="{% static 'assets/menu-icons/home.svg'%}" class="menu-icons" alt="">
+                        <span>Home</span>
+                    </div>
+                </a>
+               
+                <a href="{% url 'book-appointment'%}">
+                    <div class="menu-items" id="appointments-link">
+                        <img src="{% static 'assets/menu-icons/appointments.svg'%}" class="menu-icons" alt="">
+                        <span>Appointments</span>
+                    </div>
+                </a>
+
+                <a href="{% url '404'%}">
+                    <div class="menu-items">
+                        <img src="{% static 'assets/menu-icons/document.svg'%}" class="menu-icons" alt="">
+                        <span>Submit Documents</span>
+                    </div>
+                 </a>
+            </div>
+            
+            <hr class="nav-aside-hr-line">
+            
+            <div class="general-section">
+                <span class="nav-aside-headers">GENERAL</span>
+                <a href="{% url '404'%}">
+                    <div class="menu-items">
+                        <img src="{% static 'assets/menu-icons/setting.svg'%}" class="menu-icons" alt="">
+                        <span>Settings</span>
+                    </div>
+                </a>
+
+                <a href="{% url '404'%}">
+                    <div class="menu-items">
+                        <img src="{% static 'assets/menu-icons/help.svg'%}" class="menu-icons" alt="">
+                        <span>Help</span>
+                    </div>
+                </a>
+
+                <a href="{% url 'user-logout' %}">
+                    <div class="menu-items">
+                        <img src="{% static '/assets/menu-icons/logout.svg'%}" class="menu-icons" alt="">
+                        <span>Logout</span>   
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="confirm-appointment">
+        <span class="m-header">Appointments</span> <br>
+        <span class="s-header">APPOINTMENT CONFIRMATION</span>
+        <br> <br>
+        <p>Your appointment details are listed below. Please review them carefully. If any changes are necessary, simply click the edit button</p>
+    </div>
+    
+    <div class="details">
+        <div class="details-container">
+            <img src="{% static '/assets/process-info.svg'%}" alt="">
+            <span class="detail-heading">Appointment Details</span>
+        </div>
+    </div>
+    
+    <div class="subhead">User Details</div>
+    
+    <div class="user-details">
+        <div class="details-container">
+            <div class="user-container">
+                <div class="user-detail">
+                    <strong>Name</strong> <br> JUAN DE LA CRUZ
+                </div>
+                <div class="user-detail">
+                    <strong>ID Number</strong> <br> 202200123
+                </div>
+                <div class="user-detail">
+                    <strong>Email</strong> <br> jcruz@gbox.adnu.edu.ph
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="subhead-2">Serivce Details</div>
+
+    <div class="service-details">
+        <div class="details-container">
+            <div class="service-info">
+                <div class="user-detail">
+                    <strong>Service</strong> <br> Medical Checkup
+                </div>
+                <div class="user-detail">
+                    <strong>Date</strong> <br> May 15, 2024
+                </div>
+                <div class="user-detail">
+                    <strong>Time</strong> <br> 9:00 - 9:30 A.M
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="confirmation-action-buttons">
+        <div class="cancel-container">
+            <a href="{%url 'book-appointment'%}">
+                <button class="cancel-button">GO BACK</button>
+            </a>
+        </div>
+        <div class="next-container">
+            <a href="{%url 'confirm-appointment'%}">
+                <button class="next-button">SUBMIT</button>
+            </a>
+            
+        </div>
+    </div>
+     
+</body>
+<script src="clock-script.js"></script>
+<script src="service-script.js"></script>
+<script src="handle-buttons-script.js"></script>
+<script src="selected-service-var.js"></script>
+<script type="text/javascript" id="gwt-pst">
+    (function(d, eId) {
+        // var js, gjs = d.getElementById(eId);
+        // js = d.createElement('script'); js.id = 'gwt-pst-jsdk';
+        // js.src = "//gwhs.i.gov.ph/pst/gwtpst.js?" + new Date().getTime();
+        // gjs.parentNode.insertBefore(js, gjs);
+
+        // Function to update time
+        function updateTime() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            var ampm = hours >= 12 ? 'PM' : 'AM';
+
+            hours = hours % 12;
+            hours = hours ? hours : 12; // Handle midnight (0 hours)
+
+            // Pad single digits with leading zeros
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+
+            // Update the content of #pst-time
+            document.getElementById("pst-time").textContent = hours + ":" + minutes + " " + ampm;
+        }
+
+        // Update time every second
+        setInterval(updateTime, 1000);
+    }(document, 'gwt-pst'));
+
+</script>
+</html>
+

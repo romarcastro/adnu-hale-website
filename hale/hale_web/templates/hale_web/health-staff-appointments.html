@@ -7,8 +7,8 @@
     <title>Hale | Appointments</title>
     <link rel="stylesheet" href="{% static 'landing-page-styles.css'%}">
     <link rel="icon" href="{% static 'assets/hale-logo.svg'%}">
+    <link rel="stylesheet" href="{% static 'appointments-styles.css'%}">
 
-    <link rel="stylesheet" href="{% static 'appointment-styles.css'%}">
     <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 </head>
 <body>
@@ -116,23 +116,44 @@
                     <button class="btn-not-chosen">Approved Appointment</button>
 
                     <div class="appointment-requests-header">
-                        <span>Name</span>
-                        <span>ID</span>
-                        <span>Course</span>
-                        <span>Appointment Time</span>
+                        <span class="name">Name</span>
+                        <span class="id">ID</span>
+                        <span class="course">Course</span>
+                        <span class="appnt">Appointment Time</span>
                     </div>
                     <div class="appointment-requests">
                         <!--Database Here - pwede for loop to show each-->
                         
                         <div class="appointee-container">
-                            <img src="{% static '/assets/user-placeholder.svg'%}" class="appointee-img">
                             <span class="appointee-name">John Doe</span>
                             <span class="">20220124</span>
                             <span class="appointee-details">BS Information Technology</span>
                             <span class="appointee-details">8:00 AM</span>
-                            <button>REVIEW</button>
+                            <a href="{%url 'appointment-details'%}">
+                                <button>REVIEW</button>
+                            </a>
                         </div>
                         
+                        <div class="appointee-container">
+                            <span class="appointee-name">John Doe</span>
+                            <span class="">20220124</span>
+                            <span class="appointee-details">BS Information Technology</span>
+                            <span class="appointee-details">8:30 AM</span>
+                            <a href="{%url 'appointment-details'%}">
+                                <button>REVIEW</button>
+                            </a>
+                            
+                        </div>
+                        
+                        <div class="appointee-container">
+                            <span class="appointee-name">John Doe</span>
+                            <span class="">20220124</span>
+                            <span class="appointee-details">BS Information Technology</span>
+                            <span class="appointee-details">9:30 AM</span>
+                            <a href="{%url 'appointment-details'%}">
+                                <button>REVIEW</button>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

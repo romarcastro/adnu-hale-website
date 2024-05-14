@@ -40,10 +40,16 @@ def hstaffregister(request):
         form = CustomUserCreationForm()
         
     return render(request, 'hale_web/sign-up-health-staff.html', {'registerform': form})
+#healthstaff dashboard
+@login_required(login_url="staff-login")
+def hstaffindex(request):
+    return render(request, 'hale_web/health-staff-index.html')
 
+@login_required(login_url="staff-login")
 def staffAppointments(request):
     return render(request, 'hale_web/health-staff-appointments.html')
 
+@login_required(login_url="staff-login")
 def appointmentDetails(request):
     return render(request, 'hale_web/appointment-details.html')
 
@@ -80,12 +86,16 @@ def userregister(request):
 @login_required(login_url="user-login")
 #user dashboard
 def userindex(request):
-    return render(request, '404.html')
+    return render(request, 'hale_web/user-templates/user-landing-page.html')
 
-@login_required(login_url="staff-login")
-#healthstaff dashboard
-def hstaffindex(request):
-    return render(request, 'hale_web/health-staff-index.html')
+@login_required(login_url="user-login")
+def userAppointmentBooking(request):
+    return render(request, 'hale_web/user-templates/user-appointment-page.html')
+
+@login_required(login_url="user-login")
+def userConfirmAppointment(request):
+    return render(request, 'hale_web/user-templates/user-confirmation-page.html')
+
 
 
 def user_logout(request):
@@ -94,6 +104,9 @@ def user_logout(request):
 
 
 # Test Routes
+
+def maintenance(request):
+    return render(request, '404.html')
 
 def homepage(request):
      return render(request, 'hale_web/splash.html')

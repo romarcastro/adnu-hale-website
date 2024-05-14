@@ -1,0 +1,171 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hale |  Home Page</title>
+    <link rel="stylesheet" href="{% static '/user-css/user-landing-page.css'%}">
+    <link rel="stylesheet" href="{% static 'landing-page-styles.css'%}">
+
+    <link rel="icon" href="{% static 'assets/hale-logo.svg'%}">
+
+</head>
+<body>
+    
+    <div class="navigation-container">
+        <div class="logo-container">
+            <img src="{% static 'assets/adnu-and-hale-logo-white.svg'%}" alt="">
+        </div>
+        <div id="pst-container">
+            <div id="pst-time" class="time-style"></div>
+            <a href="">
+                <img src="{% static 'assets/notification-icon.svg'%}" class="logo-container" alt="">
+            </a>
+            <a href="">
+                <img src="{% static 'assets/account-icon.svg'%}" alt="" class="logo-container">
+            </a>
+        </div>
+    </div>
+
+    <div class="menu-container">
+        <div class="nav-aside">
+            <img src="{% static 'assets/user-circle.svg'%}" class="user-circle">
+
+            <!-- use database here for name and ID -->
+
+            <div class="user-info">
+                <span style="font-weight: 700;">JUAN DE LA CRUZ</span>
+                <span style="font-weight: 200;">Student</span>
+                <span>ID: 202200123</span> 
+            </div>
+            
+            
+            <hr class="nav-aside-hr-line">
+
+            <div class="menu-section">
+                <span class="nav-aside-headers">MENU</span> 
+                <a href="{% url 'user-index'%}">
+                    <div class="menu-items" id="home-link">
+                        <img src="{% static 'assets/menu-icons/home.svg'%}" class="menu-icons" alt="">
+                        <span>Home</span>
+                    </div>
+                </a>
+               
+                <a href="{% url 'book-appointment'%}">
+                    <div class="menu-items" id="appointments-link">
+                        <img src="{% static 'assets/menu-icons/appointments.svg'%}" class="menu-icons" alt="">
+                        <span>Appointments</span>
+                    </div>
+                </a>
+
+                <a href="{% url '404'%}">
+                    <div class="menu-items">
+                        <img src="{% static 'assets/menu-icons/document.svg'%}" class="menu-icons" alt="">
+                        <span>Submit Documents</span>
+                    </div>
+                 </a>
+            </div>
+            
+            <hr class="nav-aside-hr-line">
+            
+            <div class="general-section">
+                <span class="nav-aside-headers">GENERAL</span>
+                <a href="{% url '404'%}">
+                    <div class="menu-items">
+                        <img src="{% static 'assets/menu-icons/setting.svg'%}" class="menu-icons" alt="">
+                        <span>Settings</span>
+                    </div>
+                </a>
+
+                <a href="{% url '404'%}">
+                    <div class="menu-items">
+                        <img src="{% static 'assets/menu-icons/help.svg'%}" class="menu-icons" alt="">
+                        <span>Help</span>
+                    </div>
+                </a>
+
+                <a href="{% url 'user-logout' %}">
+                    <div class="menu-items">
+                        <img src="{% static '/assets/menu-icons/logout.svg'%}" class="menu-icons" alt="">
+                        <span>Logout</span>   
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+        <!--User Landing-->
+    <div class="user-landing">
+        <div class="user-header">
+            <img src="{% static 'assets/adnu-pillars-backdrop-2.svg'%}" class="ateneo-image">
+
+            <div class="welcome-text">
+                <strong>Welcome back, Juan!</strong>
+                <br>
+                <p>“Friend, go up higher.” -Luke 14:10 KJV</p>
+            </div>
+        </div>
+
+        <div class="main-user-containter">
+            <div class="services-container">
+                <div class="headers">
+                    <span class="m-header">Home</span>
+                    <span class="s-header">OVERVIEW</span>
+                    <hr>
+                    <span class="section-title">Medical Services Offered</span>
+                </div>
+    
+                <div class="medical-services">
+                    <div>
+                        <a href="{% url 'book-appointment' %}">
+                            <img src="{% static 'assets/health-check-ups.svg'%}"  class="health-checkup"alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="{% url 'book-appointment' %}">
+                            <img src="{% static 'assets/medical-cert-button.svg'%}"  class="health-checkup"alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+    
+            
+        </div>
+    </div>
+</body>
+<script src="clock-script.js"></script>
+<script src="handle-buttons-script.js"></script>
+
+<script type="text/javascript" id="gwt-pst">
+    (function(d, eId) {
+        // var js, gjs = d.getElementById(eId);
+        // js = d.createElement('script'); js.id = 'gwt-pst-jsdk';
+        // js.src = "//gwhs.i.gov.ph/pst/gwtpst.js?" + new Date().getTime();
+        // gjs.parentNode.insertBefore(js, gjs);
+
+        // Function to update time
+        function updateTime() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            var ampm = hours >= 12 ? 'PM' : 'AM';
+
+            hours = hours % 12;
+            hours = hours ? hours : 12; // Handle midnight (0 hours)
+
+            // Pad single digits with leading zeros
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+
+            // Update the content of #pst-time
+            document.getElementById("pst-time").textContent = hours + ":" + minutes + " " + ampm;
+        }
+
+        // Update time every second
+        setInterval(updateTime, 1000);
+    }(document, 'gwt-pst'));
+
+</script>
+
+</html>

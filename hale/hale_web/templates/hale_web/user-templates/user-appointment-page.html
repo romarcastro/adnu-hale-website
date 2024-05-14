@@ -1,0 +1,268 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hale |  Book Appointment</title>
+
+    <link rel="stylesheet" href="{% static 'landing-page-styles.css'%}">
+    <link rel="stylesheet" href="{% static '/user-css/confirm-appointment.css'%}">
+    <link rel="stylesheet" href="{% static '/user-css/book-appointments.css'%}">
+    <link rel="icon" href="{% static 'assets/hale-logo.svg'%}">
+
+</head>
+<body>
+    <div class="navigation-container">
+        <div class="logo-container">
+            <img src="{% static 'assets/adnu-and-hale-logo-white.svg'%}" alt="">
+        </div>
+        <div id="pst-container">
+            <div id="pst-time" class="time-style"></div>
+            <a href="">
+                <img src="{% static 'assets/notification-icon.svg'%}" class="logo-container" alt="">
+            </a>
+            <a href="">
+                <img src="{% static 'assets/account-icon.svg'%}" alt="" class="logo-container">
+            </a>
+        </div>
+    </div>
+
+    <div class="menu-container">
+        <div class="nav-aside">
+            <img src="{% static 'assets/user-circle.svg'%}" class="user-circle">
+
+            <!-- use database here for name and ID -->
+
+            <div class="user-info">
+                <span style="font-weight: 700;">JUAN DE LA CRUZ</span>
+                <span style="font-weight: 200;">Student</span>
+                <span>ID: 202200123</span> 
+            </div>
+            
+            
+            <hr class="nav-aside-hr-line">
+
+            <div class="menu-section">
+                <span class="nav-aside-headers">MENU</span> 
+                <a href="{% url 'user-index'%}">
+                    <div class="menu-items" id="home-link">
+                        <img src="{% static 'assets/menu-icons/home.svg'%}" class="menu-icons" alt="">
+                        <span>Home</span>
+                    </div>
+                </a>
+               
+                <a href="{% url 'book-appointment'%}">
+                    <div class="menu-items" id="appointments-link">
+                        <img src="{% static 'assets/menu-icons/appointments.svg'%}" class="menu-icons" alt="">
+                        <span>Appointments</span>
+                    </div>
+                </a>
+
+                <a href="{% url '404'%}">
+                    <div class="menu-items">
+                        <img src="{% static 'assets/menu-icons/document.svg'%}" class="menu-icons" alt="">
+                        <span>Submit Documents</span>
+                    </div>
+                 </a>
+            </div>
+            
+            <hr class="nav-aside-hr-line">
+            
+            <div class="general-section">
+                <span class="nav-aside-headers">GENERAL</span>
+                <a href="{% url '404'%}">
+                    <div class="menu-items">
+                        <img src="{% static 'assets/menu-icons/setting.svg'%}" class="menu-icons" alt="">
+                        <span>Settings</span>
+                    </div>
+                </a>
+
+                <a href="{% url '404'%}">
+                    <div class="menu-items">
+                        <img src="{% static 'assets/menu-icons/help.svg'%}" class="menu-icons" alt="">
+                        <span>Help</span>
+                    </div>
+                </a>
+
+                <a href="{% url 'user-logout' %}">
+                    <div class="menu-items">
+                        <img src="{% static '/assets/menu-icons/logout.svg'%}" class="menu-icons" alt="">
+                        <span>Logout</span>   
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="book-appointment-container">
+
+        <div class="book-appointment">
+            <span class="m-header">Appointments</span> <br>
+            <span class="s-header">BOOK AN APPOINTMENT</span>
+            <br> <br>
+            <p>Select your preferred date and time for your appointment on the list below. You will receive a confirmation via email and the notification in the website</p>
+        </div>
+    
+        <div class="select-service">
+            <div class="service">
+                <img src="{% static 'assets/process-1.svg'%}" class="process-states">
+                <strong>Select a Service</strong>
+            </div>
+            <br>
+            <div class="button-container">
+                <div class="health-checkup">
+                    <button>Health-Checkup</button>
+                </div>
+                <div class="medical-certificate">
+                    <button>Medical Certficate</button>
+                </div>
+            </div>
+        </div>
+    
+        <div class="calendar">
+            <div class="calendar-container">
+                <div class="service">
+                    <img src="{% static 'assets/process-2.svg'%}" class="process-states">
+                    <strong>Available Dates</strong>
+                </div>
+                
+                <div class="days">
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                    <div>Sun</div>
+                </div>
+                <div class="dates">
+                    <div class="date">1</div>
+                    <div class="date">2</div>
+                    <div class="date">3</div>
+                    <div class="date">4</div>
+                    <div class="date">5</div>
+                    <div class="date">6</div>
+                    <div class="date">7</div>
+                    <div class="date">8</div>
+                    <div class="date">9</div>
+                    <div class="date">10</div>
+                    <div class="date">11</div>
+                    <div class="date">12</div>
+                    <div class="date">13</div>
+                    <div class="date">14</div>
+                    <div class="date">15</div>
+                    <div class="date">16</div>
+                    <div class="date">17</div>
+                    <div class="date">18</div>
+                    <div class="date">19</div>
+                    <div class="date">20</div>
+                    <div class="date">21</div>
+                    <div class="date">22</div>
+                    <div class="date">23</div>
+                    <div class="date">24</div>
+                    <div class="date">25</div>
+                    <div class="date">26</div>
+                    <div class="date">27</div>
+                    <div class="date">28</div>
+                    <div class="date">29</div>
+                    <div class="date">30</div>
+                    <div class="date">31</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="time-slots">
+            <div class="slots-container">
+                <div class="service">
+                    <img src="{% static 'assets/process-3.svg'%}" class="process-states">
+                    <p ><strong>Available Time Slots</strong>   
+    </p>
+                </div>
+                <p class="slot-text">Morning Time Slots</p>
+                
+                <div class="button-container">
+                    <div class="time-col-one">
+                        <button>8:00 AM</button>
+                        <button>8:30 AM</button>
+                        <button>9:00 AM</button>
+                        <button>9:30 AM</button>
+                    </div>
+                    <div class="time-col-two">
+                        <button>10:00 AM</button>
+                        <button>10:30 AM</button>
+                        <button>11:00 AM</button>
+                        <button>11:30 AM</button>
+                    </div>  
+                </div>
+            </div>
+        </div>
+        
+        <div class="about-appointment">
+            <div class="about-container">
+                <p class="about-text">
+                    <div class="service">
+                        <img src="{% static 'assets/process-info.svg'%}" class="process-states">
+                        <strong class="about">About the Online Appointment</strong>
+                    </div>
+                   
+                    <div class="about-text-paragraph">
+                        Your data will be always secured with us. <br> We use advanced encryption and comply with all medical privacy regulations to protect your information.
+                    </div> <br>
+                </p>
+            </div>
+        </div>
+    
+        <div class="action-buttons">
+            <div class="cancel-container">
+                <a href="{%url 'user-index'%}">
+                    <button class="cancel-button">CANCEL</button>
+                </a>
+            </div>
+            <div class="next-container">
+                <a href="{%url 'confirm-appointment'%}">
+                    <button class="next-button">NEXT</button>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</body>
+<script src="clock-script.js"></script>
+<script src="service-script.js"></script>
+<script src="handle-buttons-script.js"></script>
+<script src="selected-service-var.js"></script>
+
+<script type="text/javascript" id="gwt-pst">
+    (function(d, eId) {
+        // var js, gjs = d.getElementById(eId);
+        // js = d.createElement('script'); js.id = 'gwt-pst-jsdk';
+        // js.src = "//gwhs.i.gov.ph/pst/gwtpst.js?" + new Date().getTime();
+        // gjs.parentNode.insertBefore(js, gjs);
+
+        // Function to update time
+        function updateTime() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            var ampm = hours >= 12 ? 'PM' : 'AM';
+
+            hours = hours % 12;
+            hours = hours ? hours : 12; // Handle midnight (0 hours)
+
+            // Pad single digits with leading zeros
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+
+            // Update the content of #pst-time
+            document.getElementById("pst-time").textContent = hours + ":" + minutes + " " + ampm;
+        }
+
+        // Update time every second
+        setInterval(updateTime, 1000);
+    }(document, 'gwt-pst'));
+
+</script>
+</html>
+

@@ -18,12 +18,15 @@ urlpatterns = [
     path('user-login', views.userlogin, name="user-login"),
     path('user-register', views.userregister, name="user-register"),
     path('user-index', views.userindex, name="user-index"),
+    path('book-appointment', views.userAppointmentBooking, name="book-appointment"),
+    path('confirm-appointment', views.userConfirmAppointment, name="confirm-appointment"),
+
 
     #test routes - dont mind
     path('register', views.register, name="register"),
     path('login', views.login, name="login"),
     path('dashboard', views.dashboard, name="dashboard"),
-    
+      path('404', views.maintenance, name="404"),
 
     path('accept/', views.accept, name='accept_page'),
 ]
