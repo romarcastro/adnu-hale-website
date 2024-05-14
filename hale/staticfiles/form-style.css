@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Inter, sans-serif;
+
+     /* Disable the highlight */
+     -webkit-user-select: none;
+     -khtml-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+     -o-user-select: none;
+     user-select: none;
+}
+
+body{
+    background-color: #002E4F;
+    color: #F1F2F2;
+}
+
+.adnu-hale-logo{
+    width: 70%;
+}
+
+.information-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    width: 50%;
+    height: 100vh;
+    background-color: #003459;
+    padding-left: 5rem;
+    gap: 1.25rem;
+}
+
+.about-hale-container{
+    margin-left: 10rem;
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    width: 50%;
+    height: 100vh;
+    background-color: #002E4F;
+    padding-left: 10rem;
+    
+}
+
+
+/*button*/
+.btn{
+    width: 340px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #F1F2F2;
+    color: #1F4276;
+
+    border-color: transparent;
+    font-weight: 700;
+}

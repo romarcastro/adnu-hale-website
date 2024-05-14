@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404</title>
+    
+    <link rel="stylesheet" href="{% static 'appointment-styles.css'%}">
+    <link rel="stylesheet" href="{% static 'landing-page-styles.css'%}">
+    <link rel="stylesheet" href="{% static '404-styles.css'%}">
+    <link rel="icon" href="{% static 'assets/hale-logo.svg'%}">
+</head>
+<body>
+    <div class="navigation-container">
+        <div class="logo-container">
+            <img src="{% static '/assets/adnu-and-hale-logo-white.svg'%}" alt="">
+        </div>
+        <div id="pst-container">
+            <div id="pst-time" class="time-style"></div>
+            </a>
+        </div>
+    </div>
+
+    <div class="error-container">
+        
+        <img src="{% static '/assets/404-vector.svg'%}" alt=""> <br>
+        <span>Under Maintenance</span>
+        <p>
+            The page you’re looking is currently under maintenance <br>
+            Come and Try again later!
+        </p>
+        <br>
+        <div class="go-back-button">
+            <img src="{% static '/assets/back.svg'%}" alt="">
+            <u style="color: #1F4276;">Go Back</u>
+            
+        </div>
+    </div>
+</body>
+
+
+</html>
+<script type="text/javascript" id="gwt-pst">
+    (function(d, eId) {
+        // var js, gjs = d.getElementById(eId);
+        // js = d.createElement('script'); js.id = 'gwt-pst-jsdk';
+        // js.src = "//gwhs.i.gov.ph/pst/gwtpst.js?" + new Date().getTime();
+        // gjs.parentNode.insertBefore(js, gjs);
+
+        // Function to update time
+        function updateTime() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            var ampm = hours >= 12 ? 'PM' : 'AM';
+
+            hours = hours % 12;
+            hours = hours ? hours : 12; // Handle midnight (0 hours)
+
+            // Pad single digits with leading zeros
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+
+            // Update the content of #pst-time
+            document.getElementById("pst-time").textContent = hours + ":" + minutes + " " + ampm;
+        }
+
+        // Update time every second
+        setInterval(updateTime, 1000);
+    }(document, 'gwt-pst'));
+
+</script>

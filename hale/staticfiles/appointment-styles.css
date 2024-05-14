@@ -1,0 +1,131 @@
+
+li{
+    text-decoration: none;
+}
+.appointments-main-container{
+    margin-left: 19rem;
+}
+
+.specific-appointments-container{
+    width: 75vw;
+    height: 70vh;
+    background-color: #F1F1F1;
+    padding: 1em;
+}
+
+.appointment-options{
+    display: flex;
+    margin: 0.5rem 0;
+}
+
+.appointment-headers-chosen{
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #F1F1F1;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.appointment-headers{
+    padding: 2rem 1rem;
+    transition: all 0.5s; 
+    cursor: pointer;
+}
+
+.appointment-headers:hover{
+    transform: scale(1.05);
+    transition: all 0.5s;
+}
+
+.btn-chosen{
+    width: 205px;
+    height: 45px;
+    font-weight: 700;
+    border-radius: 5px;
+    border-color: transparent;
+    background-color: #1F4276;
+    color: #F1F1F1;
+}
+
+.btn-not-chosen{
+    width: 205px;
+    height: 45px;
+    font-weight: 500;
+    border-radius: 5px;
+    border-color: transparent;
+    background-color: #CAE9FF;
+    color: #003459;
+    transition: all 0.5s;
+}
+
+.btn-not-chosen:hover{
+    background-color: #003459;
+    color: #F1F1F1;
+    transition: all 0.5s;
+}
+
+.appointment-requests-header{
+    text-align: start;
+    display: flex;
+    margin: 2rem 0 1rem 7rem;
+}
+
+.appointment-requests-header span{
+    padding: 0 4rem;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.appointee-container{
+    display: flex;
+    
+    background-color: #DFE6EE;
+    max-height: 50px;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+.appointee-img{
+    height: 40px;
+    padding: 0 3rem;
+    margin: 10rem;
+}
+
+.appointee-container span{
+    align-self: center;
+    padding: 0 3rem;
+}
+
+.appointee-container button{
+    align-self: center;
+    height: 35px;
+    width: 170px;
+    border-radius: 4px;
+    border-color: transparent;
+    margin-left: 3rem;
+    background-color: #44A058;
+    color: #F1F1F1;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.5s;   
+}
+
+.appointee-container button:hover{
+    background-color: #2C6839;
+    transition: all 0.5s;   
+}
+
+.appointee-name{
+    font-weight: 600;
+}
+
+.appointee-details{
+    color: #7F7B82;
+}
+
+
+/*Appointment Details Styles*/
+.details-container{
+    margin-left: 19rem;
+    background-color: #F9F9F9;
+}

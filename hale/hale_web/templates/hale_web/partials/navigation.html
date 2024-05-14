@@ -1,0 +1,21 @@
+<!--Not final-->
+
+{% extends 'appointment-details'%}
+{% load static %}
+
+{% block content%}
+    <div class="navigation-container">
+        <div class="logo-container">
+            <img src="{% static '/assets/adnu-and-hale-logo-white.svg'%}" alt="">
+        </div>
+        <div id="pst-container">
+            <div id="pst-time" class="time-style"></div>
+            <a href="">
+                <img src="{% static '/assets/notification-icon.svg'%}" class="logo-container" alt="">
+            </a>
+            <a href="">
+                <img src="{% static '/assets/account-icon.svg'%}" alt="" class="logo-container">
+            </a>
+        </div>
+    </div>
+{% endblock content%}

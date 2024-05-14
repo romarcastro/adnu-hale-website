@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hale | Welcome</title>
+    
+    <link rel="stylesheet" href="{% static 'splash-styles.css'%}">
+    <link rel="icon" href="{% static 'assets/hale-logo.svg'%}">
+</head>
+
+<body>
+    <div class="splash-container">
+        <div class="logo-container">
+            <img src="{% static 'assets/adnu-hale-logo-full.svg' %}" alt="adnu-hale-logo">
+        </div>
+        
+        <span class="font-size-16">Tell Us About You</span> <br>
+        <span class="font-size-24">Choose Account</span>
+
+        <div class="option-container">
+            
+            <div class="container">
+                <a href="{% url 'user-register'%}">
+                    <div class="student-container">
+                        <img src="{% static '/assets/student.svg' %}" class="student-img" alt="student">      
+                    </div>
+                    
+                </a>
+                <span class="font-size-20" >User</span>
+            </div>
+           
+            
+            <div class="container">
+                <a href="{% url 'staff-register'%}">
+                    <div class="health-staff-container">
+                        <img src="{% static '/assets/health staff.svg' %}" class="health-staff-img" alt="student">
+                    </div>
+                    
+                </a>
+                <span class="font-size-20">Health Staff</span>
+            </div>
+            
+        </div> <br>
+
+    </div>
+    
+</body>
+</html>

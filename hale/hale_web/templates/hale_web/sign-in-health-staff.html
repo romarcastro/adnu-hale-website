@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hale | Sign-up Health Staff</title>
+    <link rel="stylesheet" href="{% static 'static-forms.css'%}">
+    <link rel="stylesheet" href="{% static 'form-style.css'%}">
+    <link rel="stylesheet" href="{% static 'splash-styles.css'%}">
+    <link rel="icon" href="{% static 'assets/hale-logo.svg'%}">
+
+    
+</head>
+<body>
+    <div class="information-container">
+        <img src="{% static '/assets/adnu-hale-full.svg' %}" class="adnu-hale-logo"> <br>
+
+        <div class="about-hale-container">
+            <img src="{% static '/assets/adnu-hale-logo-white.svg' %}" style="width: 20px;">
+            <span style="font-weight: 800;">About ADNU-HALE</span>
+            <p class="font-size-16"> A Modernized AdNU-based Medical Information System <br>
+                designed to digitalize the process of the Office of Medical <br>
+                Health in Ateneo de Naga University.</p>
+        </div>
+    </div>
+    
+    <div class="form-container">
+        <span class="font-size-24">Log-in as Health Staff</span> <br>
+
+        <a href=""><img src="{% static '/assets/mail-button.svg' %}" style="max-width: 53%;"></a> <br>
+        <img src="{% static '/assets/manual-sign-in-phrase.svg' %}" style="max-width: 45%;">
+        <br>
+        <form method="POST" autocomplete="off" class="form">
+
+            {% csrf_token %}
+            {{loginform.as_p}}
+
+            <input type="submit" value="Login"></input>
+
+            <!--
+            <label for="idnum" class="font-size-form-header">Email or ID Number</label> <br>
+            <input type=""  id="idnum" name="idnum" class="text-form" required> <br>
+
+            <label for="password" class="font-size-form-header">Password </label> <br>
+            <input type="password" name="password" id="password" class="text-form" placeholder="Must be 8-15 characters." required>
+
+            <div style="margin-bottom: 10px;">
+                <a href="" style="color: white; font-size: 10px;"><u> Forgot Password? </u></a> <br>
+            </div>
+            
+            <button class="btn">Sign in</button>
+            <br> <br>
+            -->
+           <a href="{% url 'staff-register'%}" style="color: white; font-size: 12px;"><p>Don’t have an account yet? <u>Sign up</u></p></a> 
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,207 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hale | Home</title>
+    <link rel="stylesheet" href="{% static 'landing-page-styles.css'%}">
+    <link rel="icon" href="{% static 'assets/hale-logo.svg'%}">
+    <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+    <div class="navigation-container">
+        <div class="logo-container">
+            <img src="{% static '/assets/adnu-and-hale-logo-white.svg'%}" alt="">
+        </div>
+        <div id="pst-container">
+            <div id="pst-time" class="time-style"></div>
+            <a href="">
+                <img src="{% static '/assets/notification-icon.svg'%}" class="logo-container" alt="">
+            </a>
+            <a href="">
+                <img src="{% static '/assets/account-icon.svg'%}" alt="" class="logo-container">
+            </a>
+        </div>
+    </div>
+
+    <div class="menu-container">
+        <div class="nav-aside">
+            <img src="{% static '/assets/user-circle.svg'%}" class="user-circle">
+
+            <!-- use database here for name and ID -->
+
+            <div class="user-info">
+                <span style="font-weight: 700;">JUAN DE LA CRUZ</span>
+                <span style="font-weight: 200;">Health Staff</span>
+                <span>ID: 202200123</span> 
+            </div>
+            
+            
+            <hr class="nav-aside-hr-line">
+
+            <div class="menu-section">
+                <span class="nav-aside-headers">MENU</span> 
+                <a href="{% url 'staff-index'%}">
+                    <div class="menu-items">
+                        <img src="{% static '/assets/menu-icons/home.svg'%}" class="menu-icons" alt="">
+                        <span>Home</span>
+                    </div>
+                </a>
+               
+                <a href="{% url 'staff-appointments'%}">
+                    <div class="menu-items">
+                        <img src="{% static '/assets/menu-icons/appointments.svg'%}" class="menu-icons" alt="">
+                        <span>Appointments</span>
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="menu-items">
+                        <img src="{% static '/assets/menu-icons/document.svg'%}" class="menu-icons" alt="">
+                        <span>Medical Documents</span>
+                    </div>
+                 </a>
+            </div>
+            
+            <hr class="nav-aside-hr-line">
+            
+            <div class="general-section">
+                <span class="nav-aside-headers">GENERAL</span>
+                <a href="#">
+                    <div class="menu-items">
+                        <img src="{% static '/assets/menu-icons/setting.svg'%}" class="menu-icons" alt="">
+                        <span>Settings</span>
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="menu-items">
+                        <img src="{% static '/assets/menu-icons/help.svg'%}" class="menu-icons" alt="">
+                        <span>Help</span>
+                    </div>
+                </a>
+
+                <a href="{% url 'user-logout' %}">
+                    <div class="menu-items">
+                        <img src="{% static '/assets/menu-icons/logout.svg'%}" class="menu-icons" alt="">
+                        <span>Logout</span>   
+                    </div>
+                </a>
+            </div>
+        
+        </div>
+    </div>
+
+    <div class="landing-page">
+        <div class="landing-health-staff-container">
+
+            <div class="headers">
+                <span class="main-header">Home</span>
+                <span class="sub-header">OVERVIEW</span>
+            </div>
+
+            <div class="container">
+                <div class="calendar">
+                  <div class="header">
+                    <div class="btn prev-btn" >
+                        <i class="fas fa-chevron-left"></i>
+                      </div>
+                    <div class="month"></div>
+                    <div class="btns">
+                      <div class="btn today-btn">
+                        <i class="fas fa-calendar-day"></i>
+                      </div>
+                      
+                      <div class="btn next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="weekdays">
+                    <div class="day">Sun</div>
+                    <div class="day">Mon</div>
+                    <div class="day">Tue</div>
+                    <div class="day">Wed</div>
+                    <div class="day">Thu</div>
+                    <div class="day">Fri</div>
+                    <div class="day">Sat</div>
+                  </div>
+                  <div class="days">
+                  </div>
+                </div>
+              </div>
+        </div>
+        
+        <div class="right-side">
+            <div class="upcoming-appointments-container">
+                <div class="right-side-items">
+                    <img src="{% static '/assets/menu-icons/announcement-yellow.svg'%}" class="menu-icons-right" alt="">
+                    <span class="right-side-items">Upcoming Appointments</span>
+                </div>
+
+                <div class="appointment-details">
+                    <!--database here--> 
+                    <span class="appointment-number">0</span> <br>
+                    <span class="appointment-phrase">Appointments</span> <br>
+                    <br>
+                    <a href="{% url 'staff-appointments'%}">
+                        <div class="view-all">
+                            <u style="color: #1F4276;">View All</u>
+                            <img src="{% static '/assets/arrow-point-right.svg'%}" alt="">
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="announcements-container">
+                <div class="right-side-items">
+                    <img src="{% static '/assets/menu-icons/announcements.svg'%}" class="menu-icons-right" alt="">
+                    <span class="right-side-items">University Announcement</span>
+                </div>
+            </div>
+            <p class="footnote">© 2024 Ateneo de Naga University, Romar Castro, Allyson Federio, <br>John Ken Lanon
+            </p>
+            
+        </div>
+    </div>
+
+    
+</body>
+
+<script src="{% static '/scripts/calendar.js'%}"></script>
+<script type="text/javascript" id="gwt-pst">
+    (function(d, eId) {
+        // var js, gjs = d.getElementById(eId);
+        // js = d.createElement('script'); js.id = 'gwt-pst-jsdk';
+        // js.src = "//gwhs.i.gov.ph/pst/gwtpst.js?" + new Date().getTime();
+        // gjs.parentNode.insertBefore(js, gjs);
+
+        // Function to update time
+        function updateTime() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            var ampm = hours >= 12 ? 'PM' : 'AM';
+
+            hours = hours % 12;
+            hours = hours ? hours : 12; // Handle midnight (0 hours)
+
+            // Pad single digits with leading zeros
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+
+            // Update the content of #pst-time
+            document.getElementById("pst-time").textContent = hours + ":" + minutes + " " + ampm;
+        }
+
+        // Update time every second
+        setInterval(updateTime, 1000);
+    }(document, 'gwt-pst'));
+
+</script>
+
+
+

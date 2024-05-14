@@ -1,0 +1,266 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hale | Appointment Details</title>
+    <link rel="stylesheet" href="{% static 'landing-page-styles.css'%}">
+    <link rel="icon" href="{% static 'assets/hale-logo.svg'%}">
+
+    <link rel="stylesheet" href="{% static 'appointment-details-styles.css'%}">
+    <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+
+<body>
+    <div class="navigation-container">
+        <div class="logo-container">
+            <img src="{% static '/assets/adnu-and-hale-logo-white.svg'%}" alt="">
+        </div>
+        <div id="pst-container">
+            <div id="pst-time" class="time-style"></div>
+            <a href="">
+                <img src="{% static '/assets/notification-icon.svg'%}" class="logo-container" alt="">
+            </a>
+            <a href="">
+                <img src="{% static '/assets/account-icon.svg'%}" alt="" class="logo-container">
+            </a>
+        </div>
+    </div>
+
+    <div class="menu-container">
+        <div class="nav-aside">
+            <img src="{% static '/assets/user-circle.svg'%}" class="user-circle">
+
+            <!-- use database here for name and ID -->
+    
+            <div class="user-info">
+                <span style="font-weight: 700;">JUAN DE LA CRUZ</span>
+                <span style="font-weight: 200;">Health Staff</span>
+                <span>ID: 202200123</span> 
+            </div>
+              
+            <hr class="nav-aside-hr-line">
+
+            <div class="menu-section">
+                <span class="nav-aside-headers">MENU</span> 
+                <a href="{% url 'staff-index'%}">
+                    <div class="menu-items">
+                        <img src="{% static '/assets/menu-icons/home.svg'%}" class="menu-icons" alt="">
+                        <span>Home</span>
+                    </div>
+                </a>
+               
+                <a href="{% url 'staff-appointments'%}">
+                    <div class="menu-items">
+                        <img src="{% static '/assets/menu-icons/appointments.svg'%}" class="menu-icons" alt="">
+                        <span>Appointments</span>
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="menu-items">
+                        <img src="{% static '/assets/menu-icons/document.svg'%}" class="menu-icons" alt="">
+                        <span>Medical Documents</span>
+                    </div>
+                 </a>
+            </div>
+            
+            <hr class="nav-aside-hr-line">
+            
+            <div class="general-section">
+                <span class="nav-aside-headers">GENERAL</span>
+                <a href="#">
+                    <div class="menu-items">
+                        <img src="{% static '/assets/menu-icons/setting.svg'%}" class="menu-icons" alt="">
+                        <span>Settings</span>
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="menu-items">
+                        <img src="{% static '/assets/menu-icons/help.svg'%}" class="menu-icons" alt="">
+                        <span>Help</span>
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="menu-items">
+                        <img src="{% static '/assets/menu-icons/logout.svg'%}" class="menu-icons" alt="">
+                        <span>Logout</span>   
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="appointments">
+        
+        <div class="header-container">
+            <div class="headers">
+                <!--Add Nav-->
+                
+                <span class="main-header">Appointments</span>
+                <span class="sub-header">APPOINTMENT PREVIEW</span>
+    
+            </div>
+    
+            <div class="other-appointments-header">
+                <span class="main-header">Other Appointments</span>
+            </div>
+        </div>
+
+        <div class="appointments-main-container">
+            <div class="details-container">
+                <div class="appointee-details">
+                    <div>
+                        <img src="{% static '/assets/user-placeholder.svg'%}" alt="">
+                    </div>
+                    <div class="user-container">
+                        <span class="user-name">John Doe</span>
+                        <span class="user-designation">Student</span>
+                    </div>
+                </div>
+    
+                <div class="container-for-details">
+    
+                    <div class="appointment-detail-container">
+                        <div class="appointment-detail">
+                            <span class="appointment-header">Appointment Details</span>
+        
+                            <span class="item">Date</span>
+                            <span class="item">Time</span>
+                            <span class="item">Reason of Appointment</span>
+            
+                            <div class="btns">
+                                <button onclick="showPopup('Accept')" class="accept">ACCEPT</button>
+                                <button onclick="showPopup('Decline')" class="decline">DECLINE</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--Handles Pop-up Container-->
+                    <div id="popup-container">
+                        <h2 id="popup-header">Are you sure?</h2>
+                        <p id="popup-message"></p>
+                        <p id="popup-message-2"></p>
+                        <div class="button-container">
+                            <button id="acceptBtn" class="button-accept" style="display:none;" onclick="accept()">ACCEPT</button>
+                            <button id="declineBtn" class="button-decline" style="display:none;" onclick="decline()">DECLINE</button>
+                            <button id="cancelBtn" class="button-cancel" onclick="closePopup()">CANCEL</button>
+                        </div>
+                    </div>
+
+
+                    <div id="blur-background"></div>
+        
+                    <div class="student-details-container">
+                        <div class="appointment-detail">
+                            <span class="appointment-header">Student Details</span>
+                        
+                            <span class="item">ID Number</span>
+                            <span class="item">E-mail Account</span>
+                            <span class="item">Mobile Number</span>   
+                            
+                            <a href="">
+                                <u>View Medical Certificate</u>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="other-appointments-container">
+                <div class="other-appointments">
+                    <img src="{% static '/assets/user-placeholder.svg'%}" style="height: 20px;">
+                    <span class="item">John Doe</span>
+                    <span class="item">8:30 AM</span>
+                </div>
+                
+                <div class="other-appointments">
+                    <img src="{% static '/assets/user-placeholder.svg'%}" style="height: 20px;">
+                    <span class="item">Eric Lanon</span>
+                    <span class="item">9:00 AM</span>
+                </div>
+                
+                <div class="other-appointments">
+                    <img src="{% static '/assets/user-placeholder.svg'%}" style="height: 20px;">
+                    <span class="item">Ken Tan Jr.</span>
+                    <span class="item">9:30 AM</span>
+                </div>
+                
+                <div class="other-appointments">
+                    <img src="{% static '/assets/user-placeholder.svg'%}" style="height: 20px;">
+                    <span class="item">Karl Bicierro</span>
+                    <span class="item">10:00 AM</span>
+                </div>
+
+                <div class="other-appointments">
+                    <img src="{% static '/assets/user-placeholder.svg'%}" style="height: 20px;">
+                    <span class="item">John Lumabi</span>
+                    <span class="item">10:30 AM</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showPopup(action) {
+            var popupContainer = document.getElementById("popup-container");
+            var blurBackground = document.getElementById("blur-background");
+            var acceptBtn = document.getElementById("acceptBtn");
+            var declineBtn = document.getElementById("declineBtn");
+            var cancelBtn = document.getElementById("cancelBtn");
+            var popupMessage = document.getElementById("popup-message");
+            var popupMessage2 = document.getElementById("popup-message-2");
+
+            if (action === 'Accept') {
+                popupMessage.innerText = "Do you really want to accept this appointment?";
+                popupMessage2.innerText = "This process cannot be undone.";
+                
+                acceptBtn.style.display = "block";
+                declineBtn.style.display = "none";
+                
+            } else if (action === 'Decline') {
+                popupMessage.innerText = "Do you really want to decline this appointment?";
+                popupMessage2.innerText = "This process cannot be undone.";
+                acceptBtn.style.display = "none";
+                declineBtn.style.display = "block";
+            }
+
+            popupContainer.style.display = "block";
+            blurBackground.style.display = "block";
+        }
+
+        function accept() {
+            fetch('/accept/')
+            .then(response => response.json())
+            .then(data => {
+                // Redirect to the target page
+                window.location.href = data.redirect_url;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+            
+            console.log("Accepted");
+            closePopup();
+        }
+
+        function decline() {
+            // Add your decline action here
+            console.log("Declined");
+            closePopup();
+        }
+
+        function closePopup() {
+            var popupContainer = document.getElementById("popup-container");
+            var blurBackground = document.getElementById("blur-background");
+            popupContainer.style.display = "none";
+            blurBackground.style.display = "none";
+        }
+    </script>
+
+</body>
+</html> 
