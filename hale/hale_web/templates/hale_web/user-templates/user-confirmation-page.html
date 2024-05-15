@@ -8,15 +8,18 @@
     <link rel="stylesheet" href="{% static 'landing-page-styles.css'%}">
     <link rel="stylesheet" href="{% static '/user-css/confirm-appointments.css'%}">
     <link rel="stylesheet" href="{% static '/user-css/book-appointments.css'%}">
-    
+    <link rel="stylesheet" href="{% static 'transitions.css'%}">
+
     <link rel="icon" href="{% static 'assets/hale-logo.svg'%}">
 
 </head>
 <body>
     <div class="navigation-container">
-        <div class="logo-container">
-            <img src="{% static 'assets/adnu-and-hale-logo-white.svg'%}" alt="">
-        </div>
+        <a href="{% url 'about-hale'%}">
+            <div class="logo-container">
+                <img src="{% static 'assets/adnu-and-hale-logo-white.svg'%}" alt="">
+            </div>
+        </a>
         <div id="pst-container">
             <div id="pst-time" class="time-style"></div>
             <a href="">
@@ -94,68 +97,72 @@
             </div>
         </div>
     </div>
-    <div class="confirm-appointment">
-        <span class="m-header">Appointments</span> <br>
-        <span class="s-header">APPOINTMENT CONFIRMATION</span>
-        <br> <br>
-        <p>Your appointment details are listed below. Please review them carefully. If any changes are necessary, simply click the edit button</p>
-    </div>
-    
-    <div class="details">
-        <div class="details-container">
-            <img src="{% static '/assets/process-info.svg'%}" alt="">
-            <span class="detail-heading">Appointment Details</span>
-        </div>
-    </div>
-    
-    <div class="subhead">User Details</div>
-    
-    <div class="user-details">
-        <div class="details-container">
-            <div class="user-container">
-                <div class="user-detail">
-                    <strong>Name</strong> <br> JUAN DE LA CRUZ
-                </div>
-                <div class="user-detail">
-                    <strong>ID Number</strong> <br> 202200123
-                </div>
-                <div class="user-detail">
-                    <strong>Email</strong> <br> jcruz@gbox.adnu.edu.ph
-                </div>
 
+    <div class="confirm-appointment-container">
+
+        <div class="confirm-appointment">
+            <span class="m-header">Appointments</span> <br>
+            <span class="s-header">APPOINTMENT CONFIRMATION</span>
+            <br> <br>
+            <p>Your appointment details are listed below. Please review them carefully. If any changes are necessary, simply click the edit button</p>
+        </div>
+        
+        <div class="details">
+            <div class="details-container">
+                <img src="{% static '/assets/process-info.svg'%}" alt="">
+                <span class="detail-heading">Appointment Details</span>
             </div>
         </div>
-    </div>
-
-    <div class="subhead-2">Serivce Details</div>
-
-    <div class="service-details">
-        <div class="details-container">
-            <div class="service-info">
-                <div class="user-detail">
-                    <strong>Service</strong> <br> Medical Checkup
-                </div>
-                <div class="user-detail">
-                    <strong>Date</strong> <br> May 15, 2024
-                </div>
-                <div class="user-detail">
-                    <strong>Time</strong> <br> 9:00 - 9:30 A.M
+        
+        <div class="subhead">User Details</div>
+        
+        <div class="user-details">
+            <div class="details-container">
+                <div class="user-container">
+                    <div class="user-detail">
+                        <strong>Name</strong> <br> JUAN DE LA CRUZ
+                    </div>
+                    <div class="user-detail">
+                        <strong>ID Number</strong> <br> 202200123
+                    </div>
+                    <div class="user-detail">
+                        <strong>Email</strong> <br> jcruz@gbox.adnu.edu.ph
+                    </div>
+    
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="confirmation-action-buttons">
-        <div class="cancel-container">
-            <a href="{%url 'book-appointment'%}">
-                <button class="cancel-button">GO BACK</button>
-            </a>
+    
+        <div class="subhead-2">Serivce Details</div>
+    
+        <div class="service-details">
+            <div class="details-container">
+                <div class="service-info">
+                    <div class="user-detail">
+                        <strong>Service</strong> <br> Medical Checkup
+                    </div>
+                    <div class="user-detail">
+                        <strong>Date</strong> <br> May 15, 2024
+                    </div>
+                    <div class="user-detail">
+                        <strong>Time</strong> <br> 9:00 - 9:30 A.M
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="next-container">
-            <a href="{%url 'confirm-appointment'%}">
-                <button class="next-button">SUBMIT</button>
-            </a>
-            
+    
+        <div class="confirmation-action-buttons">
+            <div class="cancel-container">
+                <a href="{%url 'book-appointment'%}">
+                    <button class="cancel-button">GO BACK</button>
+                </a>
+            </div>
+            <div class="next-container">
+                <a href="{%url 'confirm-appointment'%}">
+                    <button class="next-button">SUBMIT</button>
+                </a>
+                
+            </div>
         </div>
     </div>
      

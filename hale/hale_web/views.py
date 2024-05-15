@@ -49,6 +49,9 @@ def hstaffindex(request):
 def staffAppointments(request):
     return render(request, 'hale_web/health-staff-appointments.html')
 
+def staffApprovedAppointments(request):
+    return render(request, 'hale_web/health-staff-approved-appointments.html')
+
 @login_required(login_url="staff-login")
 def appointmentDetails(request):
     return render(request, 'hale_web/appointment-details.html')
@@ -145,13 +148,19 @@ def login(request):
 #Javascript Redirect
 def accept(request):
     # Get the URL of the target page
-    target_page_url = reverse('staff-appointments')
+    target_page_url = reverse('staff-appointments-approved')
     
     # Return the target page URL in JSON format
     return JsonResponse({'redirect_url': target_page_url})
 
 @login_required(login_url="staff-login")
+
+
+
 #testroutes
+def aboutHALE(request):
+    return render(request, 'hale_web/about-hale.html')
+
 def dashboard(request):
         return render(request, 'hale_web/health-staff-index.html')
 

@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hale | Appointments</title>
+    <link rel="stylesheet" href="{% static 'landing-page-styles.css'%}">
+    <link rel="stylesheet" href="{% static 'sidebar-styles.css'%}">
+
+    <link rel="icon" href="{% static 'assets/hale-logo.svg'%}">
+    <link rel="stylesheet" href="{% static 'appointments-styles.css'%}">
+    <link rel="stylesheet" href="{% static 'transitions.css'%}">
+
+    <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+    <div class="navigation-container">
+        <a href="{% url 'about-hale'%}">
+            <div class="logo-container">
+                <img src="{% static 'assets/adnu-and-hale-logo-white.svg'%}" alt="">
+            </div>
+        </a>
+        <div id="pst-container">
+            <div id="pst-time" class="time-style"></div>
+            <a href="{% url '404'%}">
+                <img src="{% static 'assets/notification-icon.svg'%}" class="logo-container" alt="">
+            </a>
+            <a href="{% url '404'%}">
+                <img src="{% static 'assets/account-icon.svg'%}" alt="" class="logo-container">
+            </a>
+        </div>
+    </div>
+
+    <div class="menu-container">
+        <div class="nav-aside">
+            <img src="{% static 'assets/user-circle.svg'%}" class="user-circle">
+
+            <!-- use database here for name and ID -->
+
+            <div class="user-info">
+                <span style="font-weight: 700;">JOHN KEN TAN JR.</span>
+                <span style="font-weight: 200;">Health Staff</span>
+                <span>ID: 201800321</span> 
+            </div>
+            
+            
+            <hr class="nav-aside-hr-line">
+
+            <div class="menu-section">
+                <span class="nav-aside-headers">MENU</span> 
+                <a href="{% url 'staff-index'%}">
+                    <div class="menu-items" id="home-link">
+                        <img src="{% static 'assets/menu-icons/home.svg'%}" class="menu-icons" alt="">
+                        <span>Home</span>
+                    </div>
+                </a>
+               
+                <a href="{% url 'staff-appointments'%}">
+                    <div class="menu-items" id="appointments-link">
+                        <img src="{% static 'assets/menu-icons/appointments.svg'%}" class="menu-icons" alt="">
+                        <span>Appointments</span>
+                    </div>
+                </a>
+
+                <a href="{% url '404'%}">
+                    <div class="menu-items">
+                        <img src="{% static 'assets/menu-icons/document.svg'%}" class="menu-icons" alt="">
+                        <span>Medical Documents</span>
+                    </div>
+                 </a>
+            </div>
+            
+            <hr class="nav-aside-hr-line">
+            
+            <div class="general-section">
+                <span class="nav-aside-headers">GENERAL</span>
+                <a href="{% url '404'%}">
+                    <div class="menu-items">
+                        <img src="{% static 'assets/menu-icons/setting.svg'%}" class="menu-icons" alt="">
+                        <span>Settings</span>
+                    </div>
+                </a>
+
+                <a href="{% url '404'%}">
+                    <div class="menu-items">
+                        <img src="{% static 'assets/menu-icons/help.svg'%}" class="menu-icons" alt="">
+                        <span>Help</span>
+                    </div>
+                </a>
+
+                <a href="{% url 'user-logout' %}">
+                    <div class="menu-items">
+                        <img src="{% static '/assets/menu-icons/logout.svg'%}" class="menu-icons" alt="">
+                        <span>Logout</span>   
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="landing-page">
+        <div class="appointment-health-staff-container">
+            <div class="headers">
+                <span class="main-header">Appointments</span>
+                <span class="sub-header">OVERVIEW</span>
+            </div>
+            
+            <div class="appointments-main-container">
+                <div class="appointment-options">
+                    <div class="student-container">
+                        <span class="appointment-headers-chosen">Student</span>
+                    </div>
+                    <div class="employee-contaner">
+                        <span class="appointment-headers">Employees</span>
+                    </div>
+                </div>
+
+                <div class="specific-appointments-container">
+                    <a href="{%url 'staff-appointments'%}">
+                        <button class="btn-not-chosen">Appointment Requests</button>
+                    </a>
+
+                    <a href="{%url 'staff-appointments-approved'%}">
+                        <button class="btn-chosen">Approved Appointment</button>
+                    </a>
+                    <div class="appointment-requests-header">
+                        <span class="name">Name</span>
+                        <span class="id">ID</span>
+                        <span class="course">Course</span>
+                        <span class="appnt">Appointment Time</span>
+                    </div>
+                    <div class="appointment-requests">
+                        <!--Database Here - pwede for loop to show each-->
+                        
+                        <div class="appointee-container">
+                            <span class="appointee-name">John Doe</span>
+                            <span class="">20220124</span>
+                            <span class="appointee-details">BS Information Technology</span>
+                            <span class="appointee-details">8:00 AM</span>
+                            <a href="{%url 'appointment-details'%}">
+                                <button>REVIEW</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript" id="gwt-pst">
+    (function(d, eId) {
+        // var js, gjs = d.getElementById(eId);
+        // js = d.createElement('script'); js.id = 'gwt-pst-jsdk';
+        // js.src = "//gwhs.i.gov.ph/pst/gwtpst.js?" + new Date().getTime();
+        // gjs.parentNode.insertBefore(js, gjs);
+
+        // Function to update time
+        function updateTime() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            var ampm = hours >= 12 ? 'PM' : 'AM';
+
+            hours = hours % 12;
+            hours = hours ? hours : 12; // Handle midnight (0 hours)
+
+            // Pad single digits with leading zeros
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+
+            // Update the content of #pst-time
+            document.getElementById("pst-time").textContent = hours + ":" + minutes + " " + ampm;
+        }
+
+        // Update time every second
+        setInterval(updateTime, 1000);
+    }(document, 'gwt-pst'));
+
+</script>
+

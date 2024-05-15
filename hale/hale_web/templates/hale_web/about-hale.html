@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hale |  About</title>
+    <link rel="stylesheet" href="{% static '/landing-page-styles.css'%}">
+    <link rel="stylesheet" href="{% static '/book-appointment.css'%}">
+    <link rel="stylesheet" href="{% static '/about-hale-styles.css'%}">
+    <link rel="icon" href="{% static '/assets/hale-logo.svg'%}">
+    <link rel="stylesheet" href="{% static 'transitions.css'%}">
+
+
+</head>
+<body>
+    <div class="navigation-container">
+        <div class="logo-container">
+            <img src="{% static '/assets/adnu-and-hale-logo-white.svg'%}" alt="">
+        </div>
+        <div id="pst-container">
+            <div id="pst-time" class="time-style"></div>
+            <a href="">
+                <img src="{% static '/assets/notification-icon.svg'%}" class="logo-container" alt="">
+            </a>
+            <a href="">
+                <img src="{% static '/assets/account-icon.svg'%}" alt="" class="logo-container">
+            </a>
+        </div>
+    </div>
+
+
+    <div class="about">
+       
+        <img src="{% static '/assets/adnu-and-hale-logo-blue.svg'%}" alt="">
+
+        <br> <br>
+     
+        <h4>Mission</h4> <br>
+        <p>Our mission is to revolutionize the management of medical records and appointments at Ateneo de Naga University’s 
+            AHEHSO through HALE, the AdNU-Based Healthcare and Lifeline Environment, for all the bonafide members of the institution.
+             HALE aims to provide seamless electronic record storage, efficient appointment scheduling, and secure access to medical services, 
+             all while supporting ongoing healthcare system research to ensure the highest quality of care.
+        </p>
+        <br>
+        <h4>Vision</h4> <br>
+        <p>Our vision is to create a fully digitized, 
+            streamlined healthcare management system that enhances the efficiency and effectiveness of medical services
+             at Ateneo de Naga University’s AHEHSO. 
+             Through innovation and continuous improvement, we aspire to set a new standard for healthcare management,
+              contributing to a healthier and more informed institution.
+        </p>
+        
+        <br><br>
+        <h4>The Team</h4> <br>
+        <div class="the-team">
+            
+            <div class="dev-container">
+                <img src="{% static '/assets/dev-img/ally.svg'%}" alt=""> <br>
+                <span class="dev-name">Mark Allyson Federio</span>
+                <span class="dev-desig">Frontend Developer</span>
+            </div>
+            <div class="dev-container">
+                <img src="{% static '/assets/dev-img/roms.svg'%}" alt=""> <br>
+                <span class="dev-name">Romar Josh Castro</span>
+                <span class="dev-desig">Full Stack Lead Developer</span>
+            </div>
+            <div class="dev-container">
+                <img src="{% static '/assets/dev-img/ken.svg'%}" alt=""> <br>
+                <span class="dev-name">John Ken Lanon</span>
+                <span class="dev-desig">Backend Lead Developer</span>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+<script src="clock-script.js"></script>
+<script src="service-script.js"></script>
+<script src="handle-buttons-script.js"></script>
+<script src="selected-service-var.js"></script>
+</html>
+

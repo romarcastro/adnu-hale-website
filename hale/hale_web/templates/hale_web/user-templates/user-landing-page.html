@@ -5,18 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hale |  Home Page</title>
-    <link rel="stylesheet" href="{% static '/user-css/user-landing-page.css'%}">
+    <link rel="stylesheet" href="{% static '/user-css/users-landing-page.css'%}">
     <link rel="stylesheet" href="{% static 'landing-page-styles.css'%}">
+    <link rel="stylesheet" href="{% static 'transitions.css'%}">
 
     <link rel="icon" href="{% static 'assets/hale-logo.svg'%}">
 
 </head>
 <body>
-    
     <div class="navigation-container">
-        <div class="logo-container">
-            <img src="{% static 'assets/adnu-and-hale-logo-white.svg'%}" alt="">
-        </div>
+        <a href="{% url 'about-hale'%}">
+            <div class="logo-container">
+                <img src="{% static 'assets/adnu-and-hale-logo-white.svg'%}" alt="">
+            </div>
+        </a>
         <div id="pst-container">
             <div id="pst-time" class="time-style"></div>
             <a href="">
@@ -109,8 +111,8 @@
         <div class="main-user-containter">
             <div class="services-container">
                 <div class="headers">
-                    <span class="m-header">Home</span>
-                    <span class="s-header">OVERVIEW</span>
+                    <span class="m-headers">Home</span>
+                    <span class="s-headers">OVERVIEW</span>
                     <hr>
                     <span class="section-title">Medical Services Offered</span>
                 </div>

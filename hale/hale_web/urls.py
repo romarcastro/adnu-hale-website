@@ -11,6 +11,7 @@ urlpatterns = [
     path('staff-register', views.hstaffregister, name="staff-register"),
     path('staff-index', views.hstaffindex, name="staff-index"),
     path('staff-appointments', views.staffAppointments, name="staff-appointments"),
+    path('staff-appointment-approved', views.staffApprovedAppointments, name="staff-appointments-approved"),
 
     path('appointment-details', views.appointmentDetails, name="appointment-details"),
 
@@ -23,6 +24,8 @@ urlpatterns = [
 
 
     #test routes - dont mind
+    path('about-hale', views.aboutHALE, name="about-hale"),
+    
     path('register', views.register, name="register"),
     path('login', views.login, name="login"),
     path('dashboard', views.dashboard, name="dashboard"),

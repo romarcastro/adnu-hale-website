@@ -9,14 +9,18 @@
     <link rel="stylesheet" href="{% static 'landing-page-styles.css'%}">
     <link rel="stylesheet" href="{% static '/user-css/confirm-appointment.css'%}">
     <link rel="stylesheet" href="{% static '/user-css/book-appointments.css'%}">
+    <link rel="stylesheet" href="{% static 'transitions.css'%}">
+
     <link rel="icon" href="{% static 'assets/hale-logo.svg'%}">
 
 </head>
 <body>
     <div class="navigation-container">
-        <div class="logo-container">
-            <img src="{% static 'assets/adnu-and-hale-logo-white.svg'%}" alt="">
-        </div>
+        <a href="{% url 'about-hale'%}">
+            <div class="logo-container">
+                <img src="{% static 'assets/adnu-and-hale-logo-white.svg'%}" alt="">
+            </div>
+        </a>
         <div id="pst-container">
             <div id="pst-time" class="time-style"></div>
             <a href="">

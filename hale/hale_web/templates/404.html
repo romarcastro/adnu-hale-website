@@ -9,13 +9,17 @@
     <link rel="stylesheet" href="{% static 'appointment-styles.css'%}">
     <link rel="stylesheet" href="{% static 'landing-page-styles.css'%}">
     <link rel="stylesheet" href="{% static '404-styles.css'%}">
+    <link rel="stylesheet" href="{% static 'transitions.css'%}">
+
     <link rel="icon" href="{% static 'assets/hale-logo.svg'%}">
 </head>
 <body>
     <div class="navigation-container">
-        <div class="logo-container">
-            <img src="{% static '/assets/adnu-and-hale-logo-white.svg'%}" alt="">
-        </div>
+        <a href="{% url 'about-hale'%}">
+            <div class="logo-container">
+                <img src="{% static 'assets/adnu-and-hale-logo-white.svg'%}" alt="">
+            </div>
+        </a>
         <div id="pst-container">
             <div id="pst-time" class="time-style"></div>
             </a>
@@ -31,11 +35,7 @@
             Come and Try again later!
         </p>
         <br>
-        <div class="go-back-button">
-            <img src="{% static '/assets/back.svg'%}" alt="">
-            <u style="color: #1F4276;">Go Back</u>
-            
-        </div>
+        
     </div>
 </body>
 

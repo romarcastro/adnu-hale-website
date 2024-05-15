@@ -5,36 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hale | Home</title>
+    <link rel="stylesheet" href="{% static 'sidebar-styles.css'%}">
     <link rel="stylesheet" href="{% static 'landing-page-styles.css'%}">
     <link rel="icon" href="{% static 'assets/hale-logo.svg'%}">
     <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="{% static 'transitions.css'%}">
+
 </head>
 <body>
     <div class="navigation-container">
-        <div class="logo-container">
-            <img src="{% static '/assets/adnu-and-hale-logo-white.svg'%}" alt="">
-        </div>
+        <a href="{% url 'about-hale'%}">
+            <div class="logo-container">
+                <img src="{% static 'assets/adnu-and-hale-logo-white.svg'%}" alt="">
+            </div>
+        </a>
         <div id="pst-container">
             <div id="pst-time" class="time-style"></div>
-            <a href="">
-                <img src="{% static '/assets/notification-icon.svg'%}" class="logo-container" alt="">
+            <a href="{% url '404'%}">
+                <img src="{% static 'assets/notification-icon.svg'%}" class="logo-container" alt="">
             </a>
-            <a href="">
-                <img src="{% static '/assets/account-icon.svg'%}" alt="" class="logo-container">
+            <a href="{% url '404'%}">
+                <img src="{% static 'assets/account-icon.svg'%}" alt="" class="logo-container">
             </a>
         </div>
     </div>
 
     <div class="menu-container">
         <div class="nav-aside">
-            <img src="{% static '/assets/user-circle.svg'%}" class="user-circle">
+            <img src="{% static 'assets/user-circle.svg'%}" class="user-circle">
 
             <!-- use database here for name and ID -->
 
             <div class="user-info">
-                <span style="font-weight: 700;">JUAN DE LA CRUZ</span>
+                <span style="font-weight: 700;">JOHN KEN TAN JR.</span>
                 <span style="font-weight: 200;">Health Staff</span>
-                <span>ID: 202200123</span> 
+                <span>ID: 201800321</span> 
             </div>
             
             
@@ -43,22 +48,22 @@
             <div class="menu-section">
                 <span class="nav-aside-headers">MENU</span> 
                 <a href="{% url 'staff-index'%}">
-                    <div class="menu-items">
-                        <img src="{% static '/assets/menu-icons/home.svg'%}" class="menu-icons" alt="">
+                    <div class="menu-items" id="home-link">
+                        <img src="{% static 'assets/menu-icons/home.svg'%}" class="menu-icons" alt="">
                         <span>Home</span>
                     </div>
                 </a>
                
                 <a href="{% url 'staff-appointments'%}">
-                    <div class="menu-items">
-                        <img src="{% static '/assets/menu-icons/appointments.svg'%}" class="menu-icons" alt="">
+                    <div class="menu-items" id="appointments-link">
+                        <img src="{% static 'assets/menu-icons/appointments.svg'%}" class="menu-icons" alt="">
                         <span>Appointments</span>
                     </div>
                 </a>
 
-                <a href="#">
+                <a href="{% url '404'%}">
                     <div class="menu-items">
-                        <img src="{% static '/assets/menu-icons/document.svg'%}" class="menu-icons" alt="">
+                        <img src="{% static 'assets/menu-icons/document.svg'%}" class="menu-icons" alt="">
                         <span>Medical Documents</span>
                     </div>
                  </a>
@@ -68,16 +73,16 @@
             
             <div class="general-section">
                 <span class="nav-aside-headers">GENERAL</span>
-                <a href="#">
+                <a href="{% url '404'%}">
                     <div class="menu-items">
-                        <img src="{% static '/assets/menu-icons/setting.svg'%}" class="menu-icons" alt="">
+                        <img src="{% static 'assets/menu-icons/setting.svg'%}" class="menu-icons" alt="">
                         <span>Settings</span>
                     </div>
                 </a>
 
-                <a href="#">
+                <a href="{% url '404'%}">
                     <div class="menu-items">
-                        <img src="{% static '/assets/menu-icons/help.svg'%}" class="menu-icons" alt="">
+                        <img src="{% static 'assets/menu-icons/help.svg'%}" class="menu-icons" alt="">
                         <span>Help</span>
                     </div>
                 </a>
@@ -89,7 +94,6 @@
                     </div>
                 </a>
             </div>
-        
         </div>
     </div>
 
